@@ -10,6 +10,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusState
+import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.focus.onFocusEvent
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,6 +30,9 @@ fun PrimaryMenuItem(
                 color = if (isSelected) Color.White else Color.DarkGray,
                 shape = CircleShape
             )
+            .onFocusChanged { state ->
+                if (state.isFocused) menuItem.action.invoke()
+            }
             .clickable { menuItem.action.invoke() }
             .padding(12.dp)
     ) {

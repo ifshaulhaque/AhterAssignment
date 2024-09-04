@@ -8,6 +8,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,6 +26,9 @@ fun SubMenuItem(
                 color = if (isSelected) Color.White else Color.DarkGray,
                 shape = RoundedCornerShape(percent = 50)
             )
+            .onFocusChanged { state ->
+                if (state.isFocused) optionItem.action.invoke()
+            }
             .clickable { optionItem.action.invoke() }
             .padding(vertical = 12.dp, horizontal = 24.dp)
     ) {
