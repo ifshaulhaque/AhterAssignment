@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
+import com.ifsha.ahterassignment.MainNavGraph
 import com.ifsha.ahterassignment.PrimaryMenuNavGraph
 import com.ifsha.ahterassignment.PrimaryMenuRoute
 import com.ifsha.ahterassignment.R
@@ -22,6 +23,9 @@ import com.ifsha.ahterassignment.components.models.MenuItem
 @Composable
 fun HomeScreen() {
     val primaryMenuNavController = rememberNavController()
+    val mainNavController = rememberNavController()
+
+    MainNavGraph(navHostController = mainNavController)
 
     Row(
         horizontalArrangement = Arrangement.spacedBy(12.dp),
@@ -58,10 +62,13 @@ fun HomeScreen() {
 
         Box(
             modifier = Modifier
-                .fillMaxWidth(0.4f)
+                .fillMaxWidth(0.3f)
                 .fillMaxHeight(0.6f)
         ) {
-            PrimaryMenuNavGraph(navHostController = primaryMenuNavController)
+            PrimaryMenuNavGraph(
+                mainNavController = mainNavController,
+                navHostController = primaryMenuNavController
+            )
         }
     }
 }
