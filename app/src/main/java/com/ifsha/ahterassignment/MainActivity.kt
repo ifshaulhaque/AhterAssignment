@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.ifsha.ahterassignment.components.PrimaryMenu
 import com.ifsha.ahterassignment.components.PrimaryMenuPreview
 import com.ifsha.ahterassignment.components.models.MenuItem
+import com.ifsha.ahterassignment.screens.HomeScreen
 import com.ifsha.ahterassignment.ui.theme.AhterAssignmentTheme
 
 class MainActivity : ComponentActivity() {
@@ -33,26 +34,7 @@ class MainActivity : ComponentActivity() {
                             .fillMaxSize()
                             .padding(innerPadding),
                     ) {
-                        Column(
-                            verticalArrangement = Arrangement.Center,
-                            modifier = Modifier
-                                .fillMaxHeight()
-                                .padding(horizontal = 8.dp)
-                        ) {
-                            PrimaryMenu(
-                                listOf(
-                                    MenuItem(
-                                        icon = R.drawable.baseline_location_on_24
-                                    ),
-                                    MenuItem(
-                                        icon = R.drawable.baseline_bluetooth_24
-                                    ),
-                                    MenuItem(
-                                        icon = R.drawable.baseline_settings_24
-                                    )
-                                )
-                            )
-                        }
+                        HomeScreen()
                     }
                 }
             }

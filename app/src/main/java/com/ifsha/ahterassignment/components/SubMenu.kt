@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -39,8 +40,7 @@ fun SubMenu(
                 color = colorResource(id = R.color.blue_gray),
                 shape = RoundedCornerShape(8.dp)
             )
-            .width(200.dp)
-            .fillMaxHeight()
+            .fillMaxSize()
             .padding(24.dp)
     ) {
         Text(
