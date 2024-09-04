@@ -17,12 +17,9 @@ import com.ifsha.ahterassignment.components.models.MenuItem
 @Composable
 fun PrimaryMenu(
     menuList: List<MenuItem>,
-    onSelectionChanged: (Int) -> Unit = {}
+    onSelectionChanged: (Int) -> Unit = {},
+    currentSelectedIndex: Int = -1
 ) {
-    var currentSelectedIndex by remember {
-        mutableStateOf(-1)
-    }
-
     Column(
         modifier = Modifier
             .background(
@@ -33,7 +30,6 @@ fun PrimaryMenu(
         for (i in 0 until menuList.size) {
             val menuItem = menuList[i]
             menuItem.action = {
-                currentSelectedIndex = i
                 onSelectionChanged.invoke(i)
             }
             PrimaryMenuItem(

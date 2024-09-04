@@ -24,7 +24,7 @@ fun PrimaryMenuItem(
     Box(
         modifier = Modifier
             .background(
-                color = if (isSelected) Color.White else Color.Transparent,
+                color = if (isSelected) Color.White else Color.DarkGray,
                 shape = CircleShape
             )
             .clickable { menuItem.action.invoke() }
