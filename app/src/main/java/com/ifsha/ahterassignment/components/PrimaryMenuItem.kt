@@ -28,13 +28,13 @@ fun PrimaryMenuItem(
                 shape = CircleShape
             )
             .clickable { menuItem.action.invoke() }
-            .padding(8.dp)
+            .padding(12.dp)
     ) {
         Icon(
             painter = painterResource(id = menuItem.icon),
             contentDescription = "primaryMenuIcon",
             tint = if (isSelected) Color.DarkGray else Color.White,
-            modifier = Modifier.size(32.dp)
+            modifier = Modifier.size(50.dp)
         )
     }
 }
